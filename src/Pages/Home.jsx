@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import hero1 from "../assets/trade2minGalxy.png";
-import hero2 from "../assets/baneq2galaxy.png";
- import ibImg from "../assets/commision.jpg";
+import hero2 from "../assets/baneq2galaxy.png"
+import ibImg from "../assets/commision.jpg"
 
 export default function Home() {
 
