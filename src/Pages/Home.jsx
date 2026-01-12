@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <>
-      {/* ================= HERO ================= */}
+      
       <section className="bg-black text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 py-24 flex flex-col md:flex-row items-center gap-12">
           
@@ -77,7 +77,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= MARQUEE ================= */}
+      
       <div className="bg-gray-900 text-white overflow-hidden py-3">
         <div className="flex w-max animate-[marquee_18s_linear_infinite] gap-12 whitespace-nowrap px-6">
           <span>US 100 25539.4</span>
@@ -88,7 +88,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ================= WHY US ================= */}
       <section className="bg-gray-100 py-20 text-center">
         <h2 className="text-4xl font-bold mb-4">
           Forex Trading with{" "}
@@ -114,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= STEPS ================= */}
+      
       <section className="bg-gray-50 py-20">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold">
@@ -138,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= MARKETS ================= */}
+    
       <section className="bg-linear-to-b from-[#0b2a3b] to-[#071d2a] py-20">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-white">
@@ -164,7 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= IB ================= */}
+ 
       <section className="bg-[#f3f6f8] py-20">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
           
