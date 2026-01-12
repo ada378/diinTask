@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import hero1 from "../assets/trade2minGalxy.png";
-import hero2 from "../assets/baneq2Galaxy.png"
+import hero2 from "../assets/img1.png"
 import ibImg from "../assets/commision.jpg"
 
 export default function Home() {
