@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import hero1 from "../assets/trade2minGalxy.png";
-import hero2 from "../assets/img1.png"
+import hero1 from "../assets/img2.png";
 import ibImg from "../assets/commision.jpg"
 
 export default function Home() {
 
-  const images = [hero1, hero2];
+  const images = [hero1, ];
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
