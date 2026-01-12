@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import hero1 from "../assets/trade2mingalxy.png";
+import hero1 from "../assets/trade2minGalxy.png";
 import hero2 from "../assets/baneq2galaxy.png";
  import ibImg from "../assets/commision.jpg";
 
