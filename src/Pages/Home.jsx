@@ -4,7 +4,7 @@ import ibImg from "../assets/commision.jpg"
 
 export default function Home() {
 
-  const images = [hero1, ];
+  const images = [hero1 ];
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
