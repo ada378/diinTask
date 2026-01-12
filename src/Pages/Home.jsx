@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import hero1 from "../assets/img2.png";
-import ibImg from "../assets/commision.jpg"
+import ibImg from "../assets/commision.jpg";
 
 export default function Home() {
-
-  const images = [hero1 ];
+  const images = [hero1];
   const [current, setCurrent] = useState(0);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    setLoaded(true);
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5000);
@@ -15,32 +16,37 @@ export default function Home() {
   }, []);
 
   const whyUsCards = [
-    { title: "0.1 Pips", subtitle: "Low Spreads From", icon: "📊" },
-    { title: "500", subtitle: "Leverage Up to", icon: "⚙️" },
-    { title: "70+", subtitle: "Instruments", icon: "🖥️" },
-    { title: "True", subtitle: "ECN / STP", icon: "💱" },
-    { title: "Easy", subtitle: "Funding", icon: "🤝" },
+    { title: "0.1 Pips", subtitle: "Low Spreads From", icon: "pi pi-chart-line" },
+    { title: "500", subtitle: "Leverage Up to", icon: "pi pi-sliders-h" },
+    { title: "70+", subtitle: "Instruments", icon: "pi pi-desktop" },
+    { title: "True", subtitle: "ECN / STP", icon: "pi pi-sync" },
+    { title: "Easy", subtitle: "Funding", icon: "pi pi-wallet" },
   ];
 
   const steps = [
-    { title: "Register", desc: "Register your trading account.", icon: "🪪" },
-    { title: "Fund", desc: "Add funds easily & securely.", icon: "💰" },
-    { title: "Trade", desc: "Complete KYC & start trading.", icon: "📈" },
+    { title: "Register", desc: "Register your trading account.", icon: "pi pi-user-plus" },
+    { title: "Fund", desc: "Add funds easily & securely.", icon: "pi pi-credit-card" },
+    { title: "Trade", desc: "Complete KYC & start trading.", icon: "pi pi-chart-bar" },
   ];
 
   const markets = [
-    { title: "FOREX", desc: "Trade 41+ forex pairs.", icon: "🌍" },
-    { title: "CFD", desc: "Multiple CFD instruments.", icon: "📊" },
-    { title: "COMMODITIES", desc: "Gold, Silver, Oil & more.", icon: "🪙" },
-    { title: "CRYPTO", desc: "Popular crypto CFDs.", icon: "₿" },
+    { title: "FOREX", desc: "Trade 41+ forex pairs.", icon: "pi pi-globe" },
+    { title: "CFD", desc: "Multiple CFD instruments.", icon: "pi pi-chart-line" },
+    { title: "COMMODITIES", desc: "Gold, Silver, Oil & more.", icon: "pi pi-briefcase" },
+    { title: "CRYPTO", desc: "Popular crypto CFDs.", icon: "pi pi-bitcoin" },
   ];
 
   return (
     <>
-     
+      {/* ================= HERO ================= */}
       <section className="bg-black text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row items-center gap-10">
-          <div className="max-w-xl">
+        <div className="max-w-7xl mx-auto px-8 py-24 flex flex-col md:flex-row items-center gap-12">
+          
+          <div
+            className={`max-w-xl transition-all duration-1000 ${
+              loaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-16"
+            }`}
+          >
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               Start forex trading in minutes with <br />
               <span className="text-yellow-400">
@@ -48,51 +54,41 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mt-4 text-gray-300">
-              Premier Forex Broker for global traders.
+            <p className="mt-5 text-gray-300">
+              Premier Forex Broker for global traders with institutional-grade execution.
             </p>
 
-            <button className="mt-6 bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-300 transition">
+            <button className="mt-8 bg-yellow-400 text-black px-8 py-3 rounded font-semibold hover:scale-105 transition">
               GET STARTED
             </button>
           </div>
 
-          <div className="relative w-full max-w-md">
+          <div
+            className={`relative w-full max-w-md transition-all duration-1000 delay-200 ${
+              loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"
+            }`}
+          >
             <img
               src={images[current]}
               alt="Hero"
-              className="w-full transition-all duration-700"
+              className="w-full animate-[float_4s_ease-in-out_infinite]"
             />
-
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {images.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`h-2 w-2 rounded-full ${
-                    current === i ? "bg-yellow-400" : "bg-gray-500"
-                  }`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
-    
+      {/* ================= MARQUEE ================= */}
       <div className="bg-gray-900 text-white overflow-hidden py-3">
-        <div className="flex w-max animate-marquee gap-10 whitespace-nowrap px-4">
+        <div className="flex w-max animate-[marquee_18s_linear_infinite] gap-12 whitespace-nowrap px-6">
           <span>US 100 25539.4</span>
           <span>EUR/USD 1.16681</span>
           <span>Bitcoin 91814</span>
           <span>Ethereum 3153</span>
           <span>S&P 500 6025.3</span>
-          <span>US 100 25539.4</span>
-          <span>EUR/USD 1.16681</span>
         </div>
       </div>
 
-   
+      {/* ================= WHY US ================= */}
       <section className="bg-gray-100 py-20 text-center">
         <h2 className="text-4xl font-bold mb-4">
           Forex Trading with{" "}
@@ -100,16 +96,17 @@ export default function Home() {
         </h2>
 
         <p className="text-gray-600 mb-12">
-          Advanced technology & tight spreads.
+          Advanced technology & institutional liquidity.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-8">
           {whyUsCards.map((c, i) => (
             <div
               key={i}
-              className="bg-white w-48 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition"
+              className="bg-white w-48 p-6 rounded-xl shadow-lg
+              transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
             >
-              <div className="text-3xl mb-2">{c.icon}</div>
+              <i className={`${c.icon} text-3xl mb-2 text-teal-600`} />
               <h3 className="text-xl font-bold">{c.title}</h3>
               <p className="text-sm text-gray-500">{c.subtitle}</p>
             </div>
@@ -117,25 +114,23 @@ export default function Home() {
         </div>
       </section>
 
-    
+      {/* ================= STEPS ================= */}
       <section className="bg-gray-50 py-20">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold">
             Start Forex Trading{" "}
             <span className="text-teal-600">In Minutes</span>
           </h2>
-          <p className="text-gray-600 mt-3">
-            Simple steps to start your journey.
-          </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-10">
           {steps.map((s, i) => (
             <div
               key={i}
-              className="bg-white w-72 p-8 rounded-xl shadow-lg text-center hover:-translate-y-2 transition"
+              className="bg-white w-72 p-8 rounded-xl shadow-lg text-center
+              transition-all duration-500 hover:-translate-y-3"
             >
-              <div className="text-4xl mb-3">{s.icon}</div>
+              <i className={`${s.icon} text-4xl mb-3 text-teal-600`} />
               <h3 className="text-xl font-bold">{s.title}</h3>
               <p className="text-gray-500 text-sm">{s.desc}</p>
             </div>
@@ -143,27 +138,25 @@ export default function Home() {
         </div>
       </section>
 
-   
+      {/* ================= MARKETS ================= */}
       <section className="bg-linear-to-b from-[#0b2a3b] to-[#071d2a] py-20">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-white">
             Range of <span className="text-teal-400">Market</span>
           </h2>
-          <p className="text-gray-300 mt-3">
-            70+ instruments across global markets.
-          </p>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {markets.map((m, i) => (
             <div
               key={i}
-              className="bg-white/90 p-8 rounded-xl text-center shadow-lg hover:-translate-y-2 transition"
+              className="bg-white/90 p-8 rounded-xl text-center shadow-lg
+              transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
             >
-              <div className="text-5xl mb-4">{m.icon}</div>
+              <i className={`${m.icon} text-5xl mb-4 text-teal-600`} />
               <h3 className="text-xl font-bold">{m.title}</h3>
               <p className="text-sm text-gray-600 mb-4">{m.desc}</p>
-              <button className="bg-teal-600 text-white px-5 py-2 rounded">
+              <button className="bg-teal-600 text-white px-5 py-2 rounded hover:scale-105 transition">
                 Instruments List
               </button>
             </div>
@@ -171,19 +164,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= IB ================= */}
       <section className="bg-[#f3f6f8] py-20">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+          
           <div className="rounded-2xl overflow-hidden shadow-xl">
             <img
               src={ibImg}
               alt="IB Program"
-              className="w-full h-full object-cover hover:scale-105 transition duration-500"
+              className="w-full h-full object-cover hover:scale-110 transition duration-700"
             />
           </div>
 
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">
-              Increase Your Revenue Potential <br />
               Become An Introducing Broker With{" "}
               <span className="text-teal-600">
                 Galaxy Financial Services
@@ -191,14 +185,10 @@ export default function Home() {
             </h2>
 
             <p className="mt-6 text-gray-600 italic">
-              Customised Rebate Scheme | Marketing Tools | Dedicated IB Dashboard
+              Customised Rebate | Marketing Tools | Dedicated Dashboard
             </p>
 
-            <p className="mt-6 text-gray-700 font-semibold">
-              Earn Maximum IB Commission With Galaxy Financial Services*
-            </p>
-
-            <button className="mt-8 px-6 py-3 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition">
+            <button className="mt-8 px-6 py-3 bg-teal-600 text-white rounded-md hover:scale-105 transition">
               Become An IB
             </button>
           </div>

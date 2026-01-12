@@ -3,6 +3,8 @@ import Home from "./Pages/Home";
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
 import NavBar from "./Components/NavBar";
+import "primeicons/primeicons.css";
+import "primeicons/primeicons.css";
 
 import Footer from "./Components/Footer";
 import './App.css'
