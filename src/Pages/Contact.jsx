@@ -1,108 +1,140 @@
-import React from "react";
+import { motion } from "framer-motion";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Contact = () => {
   return (
-    <div className="w-full bg-gray-50 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        
-   
-        <div className="text-center mb-12">
-          <span className="inline-block bg-teal-100 text-teal-600 text-sm px-4 py-1 rounded-full mb-4">
-            CONTACT US
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            We Love to hear <span className="text-teal-600">From You</span>
-          </h2>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            If you have any queries on our product or services, feel free to contact us
-            or drop your info in the form below. Our team will get in touch with you shortly!
-          </p>
-        </div>
+    <section className="relative bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] py-28 text-white overflow-hidden">
 
     
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white shadow-md rounded-lg p-8">
-          
-       
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-teal-600 font-semibold text-lg mb-2">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#0f766e,_transparent_45%)] opacity-20"></div>
+
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <span className="inline-block mb-4 px-5 py-2 text-xs uppercase tracking-widest rounded-full bg-teal-500/10 text-teal-400 border border-teal-400/30">
+            Contact Us
+          </span>
+
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Let’s
+            <span className="text-teal-400"> Connect</span>
+          </h1>
+
+          <p className="mt-6 max-w-2xl mx-auto text-gray-400 text-lg">
+            Have questions about our trading solutions? Our team is ready to
+            assist you with professional support and guidance.
+          </p>
+        </motion.div>
+
+        {/* Content */}
+        <div className="grid lg:grid-cols-2 gap-14">
+
+          {/* Contact Info */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            transition={{ duration: 0.7 }}
+            className="space-y-10"
+          >
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-teal-400/50 transition">
+              <h3 className="text-xl font-semibold mb-4 text-teal-400">
                 Registered Address
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-400 leading-relaxed text-sm">
                 Ground Floor, The Sotheby Building, Rodney Bay, Gros-Islet,
-                Saint Lucia P.O. Box 838, Castries, Saint Lucia. <br />
+                Saint Lucia P.O. Box 838, Castries, Saint Lucia.
+                <br />
                 Registration Number: 2025-00598
               </p>
             </div>
 
-            <div>
-              <h3 className="text-teal-600 font-semibold text-lg mb-2">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-teal-400/50 transition">
+              <h3 className="text-xl font-semibold mb-4 text-teal-400">
                 Physical Address
               </h3>
-              <p className="text-gray-600 text-sm">
-                26 Nikoloz Baratashvili Street, Office 78, Batumi 6000 Georgia.
+              <p className="text-gray-400 text-sm">
+                26 Nikoloz Baratashvili Street, Office 78,
+                Batumi 6000, Georgia.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <div className="flex items-center gap-3 bg-teal-600 text-white px-4 py-3 rounded-md w-fit">
-                <span>📞</span>
-                <span className="text-sm">+56226564108</span>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center gap-3 px-5 py-4 bg-teal-500/10 border border-teal-400/30 rounded-xl">
+                <FaPhoneAlt className="text-teal-400" />
+                <span className="text-sm text-gray-300">
+                  +56 226 564 108
+                </span>
               </div>
-              <div className="flex items-center gap-3 bg-teal-600 text-white px-4 py-3 rounded-md w-fit">
-                <span>✉️</span>
-                <span className="text-sm">support@galaxyfinservices.com</span>
+
+              <div className="flex items-center gap-3 px-5 py-4 bg-teal-500/10 border border-teal-400/30 rounded-xl">
+                <FaEnvelope className="text-teal-400" />
+                <span className="text-sm text-gray-300">
+                  support@galaxyfinservices.com
+                </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-        
-          <form className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Contact Form */}
+          <motion.form
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-10 space-y-6"
+          >
+            <div className="grid sm:grid-cols-2 gap-4">
               <input
                 type="text"
-                placeholder="Your Name"
-                className="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="Full Name"
+                className="bg-transparent border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-teal-400 transition"
               />
               <input
                 type="email"
-                placeholder="Your Email"
-                className="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="Email Address"
+                className="bg-transparent border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-teal-400 transition"
               />
               <input
                 type="text"
-                placeholder="Your Number"
-                className="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="Phone Number"
+                className="bg-transparent border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-teal-400 transition"
               />
               <input
                 type="text"
-                placeholder="Your Subject"
-                className="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="Subject"
+                className="bg-transparent border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-teal-400 transition"
               />
             </div>
 
             <textarea
-              placeholder="Message"
               rows="5"
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              placeholder="Your Message"
+              className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-teal-400 transition"
             ></textarea>
-
-           
-            <div className="border rounded-md p-4 flex items-center gap-3 w-fit">
-              <input type="checkbox" />
-              <span className="text-sm text-gray-600">I'm not a robot</span>
-            </div>
 
             <button
               type="submit"
-              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-md transition"
+              className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 rounded-lg transition-all hover:shadow-lg hover:shadow-teal-500/30"
             >
               Send Message
             </button>
-          </form>
+          </motion.form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
