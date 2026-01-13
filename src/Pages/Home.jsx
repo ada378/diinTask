@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { FaShieldAlt, FaBolt, FaChartLine, FaUserPlus, FaCreditCard, FaChartBar, FaGlobe, FaBriefcase, FaBitcoin } from "react-icons/fa";
 import hero1 from "../assets/img2.png";
 import ibImg from "../assets/commision.jpg";
 import ChatBot from "../Components/ChatBot";
@@ -17,24 +19,24 @@ export default function Home() {
   }, []);
 
   const whyUsCards = [
-    { title: "0.1 Pips", subtitle: "Low Spreads From", icon: "pi pi-chart-line" },
-    { title: "500", subtitle: "Leverage Up to", icon: "pi pi-sliders-h" },
-    { title: "70+", subtitle: "Instruments", icon: "pi pi-desktop" },
-    { title: "True", subtitle: "ECN / STP", icon: "pi pi-sync" },
-    { title: "Easy", subtitle: "Funding", icon: "pi pi-wallet" },
+    { title: "0.1 Pips", subtitle: "Low Spreads From", icon: FaChartLine },
+    { title: "500", subtitle: "Leverage Up to", icon: FaBolt },
+    { title: "70+", subtitle: "Instruments", icon: FaGlobe },
+    { title: "True", subtitle: "ECN / STP", icon: FaShieldAlt },
+    { title: "Easy", subtitle: "Funding", icon: FaCreditCard },
   ];
 
   const steps = [
-    { title: "Register", desc: "Register your trading account.", icon: "pi pi-user-plus" },
-    { title: "Fund", desc: "Add funds easily & securely.", icon: "pi pi-credit-card" },
-    { title: "Trade", desc: "Complete KYC & start trading.", icon: "pi pi-chart-bar" },
+    { title: "Register", desc: "Register your trading account.", icon: FaUserPlus },
+    { title: "Fund", desc: "Add funds easily & securely.", icon: FaCreditCard },
+    { title: "Trade", desc: "Complete KYC & start trading.", icon: FaChartBar },
   ];
 
   const markets = [
-    { title: "FOREX", desc: "Trade 41+ forex pairs.", icon: "pi pi-globe" },
-    { title: "CFD", desc: "Multiple CFD instruments.", icon: "pi pi-chart-line" },
-    { title: "COMMODITIES", desc: "Gold, Silver, Oil & more.", icon: "pi pi-briefcase" },
-    { title: "CRYPTO", desc: "Popular crypto CFDs.", icon: "pi pi-bitcoin" },
+    { title: "FOREX", desc: "Trade 41+ forex pairs.", icon: FaGlobe },
+    { title: "CFD", desc: "Multiple CFD instruments.", icon: FaChartLine },
+    { title: "COMMODITIES", desc: "Gold, Silver, Oil & more.", icon: FaBriefcase },
+    { title: "CRYPTO", desc: "Popular crypto CFDs.", icon: FaBitcoin },
   ];
 
  
@@ -55,17 +57,17 @@ export default function Home() {
   };
 
   const Hero = () => (
-    <section className="relative overflow-hidden bg-[#05080f] text-white">
+    <section className="relative overflow-hidden bg-[#05080f] text-white pt-32">
      
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-transparent blur-3xl" />
         <div className="absolute -bottom-24 -right-24 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tl from-indigo-500/20 via-purple-500/10 to-transparent blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-28 flex flex-col md:flex-row items-center gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 flex flex-col md:flex-row items-center gap-12 min-h-[80vh] justify-center">
       
         <div
-          className={`relative max-w-xl rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 shadow-2xl transition-all duration-1000 ${
+          className={`relative flex-1 max-w-xl rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 shadow-2xl transition-all duration-1000 animate-slideInLeft ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -83,10 +85,12 @@ export default function Home() {
           </p>
 
           <div className="mt-8 flex items-center gap-4">
-            <button className="group relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-500 text-black font-semibold px-8 py-3 rounded-lg transition-transform duration-300 hover:scale-[1.03] focus:scale-[1.02]">
-              <span className="relative z-10 text-white">Get started</span>
-              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 bg-white/10" />
-            </button>
+            <Link to="/real-account">
+              <button className="group relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:shadow-teal-500/25 focus:scale-[1.02] animate-glow">
+                <span className="relative z-10">Get started</span>
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 bg-white/10" />
+              </button>
+            </Link>
             <a
               href="#markets"
               className="text-teal-300 hover:text-teal-200 transition-colors underline-offset-4 hover:underline"
@@ -98,11 +102,11 @@ export default function Home() {
  
           <div className="mt-6 flex items-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-2 hover:text-gray-300 transition-colors">
-              <span className="pi pi-shield text-teal-300" />
+              <FaShieldAlt className="text-teal-300" />
               <span>Secure & compliant</span>
             </div>
             <div className="flex items-center gap-2 hover:text-gray-300 transition-colors">
-              <span className="pi pi-bolt text-teal-300" />
+              <FaBolt className="text-teal-300" />
               <span>Fast execution</span>
             </div>
           </div>
@@ -110,7 +114,7 @@ export default function Home() {
 
     
         <div
-          className={`relative w-full max-w-md transition-all duration-1000 delay-200 ${
+          className={`relative flex-1 w-full max-w-md transition-all duration-1000 delay-200 animate-slideInRight ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -118,7 +122,7 @@ export default function Home() {
           <img
             src={images[current]}
             alt="Hero"
-            className="w-full rounded-2xl shadow-2xl animate-float will-change-transform"
+            className="w-full rounded-2xl shadow-2xl animate-float will-change-transform hover:scale-105 transition-transform duration-700"
           />
         </div>
       </div>
@@ -131,11 +135,44 @@ export default function Home() {
   const Ticker = () => (
     <div className="bg-[#0a0f1a] text-white overflow-hidden py-3 border-y border-white/5">
       <div className="flex w-max animate-marquee gap-12 whitespace-nowrap px-6">
-        <span className="text-gray-300 hover:text-white transition-colors">US 100 25539.4</span>
-        <span className="text-gray-300 hover:text-white transition-colors">EUR/USD 1.16681</span>
-        <span className="text-gray-300 hover:text-white transition-colors">Bitcoin 91814</span>
-        <span className="text-gray-300 hover:text-white transition-colors">Ethereum 3153</span>
-        <span className="text-gray-300 hover:text-white transition-colors">S&P 500 6025.3</span>
+        {/* Duplicate content for seamless loop */}
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-green-400">📈</span> US 100 25539.4 (+2.1%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-blue-400">💱</span> EUR/USD 1.16681 (-0.3%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-orange-400">₿</span> Bitcoin 91814 (+5.2%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-purple-400">⟠</span> Ethereum 3153 (+3.8%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-teal-400">📊</span> S&P 500 6025.3 (+1.4%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-yellow-400">🥇</span> Gold 2650.40 (+0.8%)
+        </span>
+        {/* Duplicate for seamless animation */}
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-green-400">📈</span> US 100 25539.4 (+2.1%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-blue-400">💱</span> EUR/USD 1.16681 (-0.3%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-orange-400">₿</span> Bitcoin 91814 (+5.2%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-purple-400">⟠</span> Ethereum 3153 (+3.8%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-teal-400">📊</span> S&P 500 6025.3 (+1.4%)
+        </span>
+        <span className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-2">
+          <span className="text-yellow-400">🥇</span> Gold 2650.40 (+0.8%)
+        </span>
       </div>
     </div>
   );
@@ -154,7 +191,7 @@ export default function Home() {
     return (
       <section ref={ref} className="bg-[#0b1220] py-20">
         <div
-          className={`max-w-7xl mx-auto px-6 transition-all duration-700 ${
+          className={`w-full px-4 sm:px-6 lg:px-8 transition-all duration-700 animate-fadeInUp ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -163,16 +200,17 @@ export default function Home() {
             accent="Galaxy Financial"
             subtitle="Advanced technology & institutional liquidity."
           />
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-7xl mx-auto">
             {whyUsCards.map((c, i) => (
               <div
                 key={i}
-                className="group bg-white/5 backdrop-blur-md border border-white/10 w-52 md:w-56 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-teal-400/40"
+                className="group bg-white/5 backdrop-blur-md border border-white/10 w-52 md:w-56 p-6 rounded-xl shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-teal-500/20 hover:border-teal-400/40 animate-fadeInUp"
+                style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <i className={`${c.icon} text-3xl mb-2 text-teal-400`} />
+                <c.icon className="text-3xl mb-2 text-teal-400 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-xl font-semibold text-white">{c.title}</h3>
                 <p className="text-sm text-gray-400">{c.subtitle}</p>
-                <div className="mt-3 h-px bg-gradient-to-r from-transparent via-teal-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="mt-3 h-px bg-gradient-to-r from-transparent via-teal-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
               </div>
             ))}
           </div>
@@ -186,21 +224,22 @@ export default function Home() {
     return (
       <section ref={ref} className="bg-[#0c1424] py-20">
         <div
-          className={`max-w-7xl mx-auto px-6 transition-all duration-700 ${
+          className={`w-full px-4 sm:px-6 lg:px-8 transition-all duration-700 animate-fadeInUp ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
           <SectionHeader title="Start forex trading" accent="in minutes" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {steps.map((s, i) => (
               <div
                 key={i}
-                className="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl shadow-lg text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                className="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl shadow-lg text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-teal-500/20 hover:border-teal-400/30 animate-fadeInUp"
+                style={{ animationDelay: `${i * 0.2}s` }}
               >
-                <i className={`${s.icon} text-4xl mb-3 text-teal-400`} />
+                <s.icon className="text-4xl mb-3 text-teal-400 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
                 <h3 className="text-xl font-semibold text-white">{s.title}</h3>
                 <p className="text-gray-400 text-sm">{s.desc}</p>
-                <button className="mt-5 text-teal-300 hover:text-teal-200 transition-colors underline-offset-4 hover:underline">
+                <button className="mt-5 text-teal-300 hover:text-teal-200 transition-all duration-300 underline-offset-4 hover:underline hover:scale-105">
                   Learn more
                 </button>
               </div>
@@ -216,21 +255,22 @@ export default function Home() {
     return (
       <section id="markets" ref={ref} className="bg-gradient-to-b from-[#0b2a3b] via-[#0a2231] to-[#071d2a] py-20">
         <div
-          className={`max-w-7xl mx-auto px-6 transition-all duration-700 ${
+          className={`w-full px-4 sm:px-6 lg:px-8 transition-all duration-700 animate-fadeInUp ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
           <SectionHeader title="Range of" accent="markets" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {markets.map((m, i) => (
               <div
                 key={i}
-                className="group bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-xl text-center shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-teal-400/40"
+                className="group bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-xl text-center shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-teal-400/40 animate-fadeInUp"
+                style={{ animationDelay: `${i * 0.15}s` }}
               >
-                <i className={`${m.icon} text-5xl mb-4 text-teal-400`} />
+                <m.icon className="text-5xl mb-4 text-teal-400 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
                 <h3 className="text-xl font-semibold text-white">{m.title}</h3>
                 <p className="text-sm text-gray-300 mb-4">{m.desc}</p>
-                <button className="relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-5 py-2 rounded-md transition-transform duration-300 hover:scale-[1.03]">
+                <button className="relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-5 py-2 rounded-md transition-all duration-300 hover:scale-[1.05] hover:shadow-lg hover:shadow-teal-500/30">
                   <span className="relative z-10">Instruments list</span>
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 bg-white/10" />
                 </button>
@@ -247,30 +287,32 @@ export default function Home() {
     return (
       <section ref={ref} className="bg-[#0b1220] py-20">
         <div
-          className={`max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 animate-fadeInUp ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-slideInLeft">
             <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/10 via-transparent to-indigo-500/10" />
             <img
               src={ibImg}
               alt="IB Program"
-              className="w-full h-full object-cover transition-transform duration-[900ms] hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-[900ms] hover:scale-110"
             />
           </div>
 
-          <div>
+          <div className="animate-slideInRight">
             <h2 className="text-3xl lg:text-4xl font-semibold text-white">
               Become an Introducing Broker with{" "}
-              <span className="text-teal-400">Galaxy Financial Services</span>
+              <span className="text-teal-400 animate-pulse-slow">Galaxy Financial Services</span>
             </h2>
-            <p className="mt-6 text-gray-300 italic">
+            <p className="mt-6 text-gray-300 italic text-lg">
               Customised rebate • Marketing tools • Dedicated dashboard
             </p>
-            <button className="mt-8 px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-lg transition-transform duration-300 hover:scale-[1.03]">
-              Become an IB
-            </button>
+            <Link to="/real-account">
+              <button className="mt-8 px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-lg transition-all duration-300 hover:scale-[1.05] hover:shadow-xl hover:shadow-teal-500/30 animate-glow">
+                Become an IB
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -287,12 +329,12 @@ export default function Home() {
       <IB />
       {/* Footer */}
       <footer className="bg-[#070b12] border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-10 text-gray-400 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm">© {new Date().getFullYear()} Galaxy Financial Services</p>
-          <div className="flex items-center gap-6">
-            <a className="hover:text-white transition-colors" href="#">Privacy</a>
-            <a className="hover:text-white transition-colors" href="#">Terms</a>
-            <a className="hover:text-white transition-colors" href="#">Support</a>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-gray-400 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-sm animate-fadeInUp">© {new Date().getFullYear()} Galaxy Financial Services</p>
+          <div className="flex items-center gap-6 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+            <a className="hover:text-white transition-all duration-300 hover:scale-105" href="#">Privacy</a>
+            <a className="hover:text-white transition-all duration-300 hover:scale-105" href="#">Terms</a>
+            <a className="hover:text-white transition-all duration-300 hover:scale-105" href="#">Support</a>
           </div>
         </div>
         <ChatBot/>

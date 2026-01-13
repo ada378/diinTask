@@ -2,27 +2,28 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
-import NavBar from "./Components/NavBar";
-import "primeicons/primeicons.css";
-import "primeicons/primeicons.css";
-
-import Footer from "./Components/Footer";
-import './App.css'
-
 import About from "./Pages/About";
+import RealAccount from "./Pages/RealAccount";
+import DemoAccount from "./Pages/DemoAccount";
+import Login from "./Pages/Login";
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
+import "primeicons/primeicons.css";
+import './App.css'
 
 function App() {
   return (
     <Router>
       <NavBar />
-      <div className="container mx-auto px-4 py-8">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/real-account" element={<RealAccount />} />
+        <Route path="/demo-account" element={<DemoAccount />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <Footer />
     </Router>
   );
