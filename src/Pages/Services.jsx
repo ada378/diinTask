@@ -42,12 +42,12 @@ export default function Services() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] py-28 text-white overflow-hidden">
+    <section className="relative bg-gradient-to-b   from-[#020617] via-[#020617] to-[#020617] py-28 text-white overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#0f766e,_transparent_45%)] opacity-20"></div>
+      <div className="absolute inset-0   bg-[radial-gradient(circle_at_top,_#0f766e,_transparent_45%)] opacity-20"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-6 py-5">
 
         {/* Header */}
         <motion.div

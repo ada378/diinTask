@@ -9,11 +9,10 @@ const fadeUp = {
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] text-white">
+    <div className="bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] text-white py-5">
 
-      {/* ================= HERO ================= */}
       <section className="relative py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#0f766e,_transparent_40%)] opacity-20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#0f766e,_transparent_40%)]   opacity-20"></div>
 
         <motion.div
           initial="hidden"

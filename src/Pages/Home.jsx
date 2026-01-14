@@ -58,10 +58,22 @@ export default function Home() {
 
   const Hero = () => (
     <section className="relative overflow-hidden bg-[#05080f] text-white pt-32">
-     
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-transparent blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tl from-indigo-500/20 via-purple-500/10 to-transparent blur-3xl" />
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient Orbs */}
+        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-transparent blur-3xl animate-pulse-slow" />
+        <div className="absolute -bottom-24 -right-24 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tl from-indigo-500/20 via-purple-500/10 to-transparent blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[40rem] w-[40rem] rounded-full bg-gradient-to-r from-teal-500/10 to-cyan-500/10 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        
+        {/* Animated Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(20,184,166,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(20,184,166,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+        
+        {/* Floating Particles */}
+        <div className="absolute top-20 left-10 w-2 h-2 bg-teal-400/30 rounded-full animate-float" />
+        <div className="absolute top-40 right-20 w-3 h-3 bg-cyan-400/30 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-indigo-400/30 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-purple-400/30 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-teal-400/30 rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 flex flex-col md:flex-row items-center gap-12 min-h-[80vh] justify-center">
